@@ -13,23 +13,21 @@ class ActivityInteracao : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_interacao)
 
-        var campo: EditText;
-        var result : TextView;
-        var boaNoite : Button;
-        var bomDia : Button;
+        val campo: EditText;
+        val result : TextView;
+        val boaNoite : Button;
+        val bomDia : Button;
 
         campo = findViewById(R.id.etNome);
-        boaNoite = findViewById(R.id.btBoaNoite) as Button;
+        boaNoite = findViewById(R.id.btBoaNoite);
         bomDia = findViewById(R.id.btBomDia);
-        result = findViewById(R.id.tvResultado) as TextView;
+        result = findViewById(R.id.tvResultado);
 
 
 
-        bomDia.setOnClickListener {
-            result.text = "Bom dia " + campo.text;
-        }
+        bomDia.setOnClickListener { result.text = "Bom dia ${campo.text}" }
 
-        boaNoite.setOnClickListener { result.text = "Boa noite " + campo.text; }
+        boaNoite.setOnClickListener { result.text = "Boa noite ${campo.text}" }
 
     }
 
